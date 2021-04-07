@@ -1,6 +1,8 @@
 package com.microsoft.demo;
 
 public class Demo {
+    
+    public String password = "Hello";
     public void DoSomething(boolean flag){
         if(flag){
             System.out.println("I ama covered");
