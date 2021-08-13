@@ -3,13 +3,10 @@ steps:
   displayName: 'Application security testing'
   inputs:
     projectName: test
-    CheckmarxService: 'SAST-Bug'
-    fullTeamName: /CxServer
+    CheckmarxService: 'SAST-Bug'    
     incScan: false    
     fullTeamName: "/CxServer"
-    comment: '$(Build.SourceBranchName)'
-    CheckmarxService: 'SAST-Bug'
+    comment: '$(Build.SourceBranchName)'    
     enableProxy: false
-    enableSastScan: true
-    incScan: false
+    enableSastScan: true    
     enableDependencyScan: false
