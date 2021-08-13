@@ -3,6 +3,9 @@ parameters:
   type: string
   default: SAST-Bug
 
+variables:
+- name: debug
+  value: true 
 pool:
   name: Default
   
