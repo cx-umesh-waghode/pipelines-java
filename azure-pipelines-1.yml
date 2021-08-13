@@ -5,8 +5,7 @@ steps:
     projectName: test
     CheckmarxService: 'SAST-Bug'
     fullTeamName: /CxServer
-    incScan: false
-    projectName: '$(Build.Repository.Name)'
+    incScan: false    
     fullTeamName: "/CxServer"
     comment: '$(Build.SourceBranchName)'
     CheckmarxService: 'SAST-Bug'
