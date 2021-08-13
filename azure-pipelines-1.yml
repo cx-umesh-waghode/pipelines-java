@@ -1,3 +1,8 @@
+parameters:
+- name: cxService
+  type: string
+  default: SAST-Bug
+
 pool:
   name: Default
   
@@ -6,7 +11,7 @@ steps:
   displayName: 'Application security testing'
   inputs:
     projectName: test
-    CheckmarxService: 'SAST-Bug'    
+    CheckmarxService: ${{ parameters.cxService }}
     incScan: false    
     fullTeamName: "/CxServer"
     comment: '$(Build.SourceBranchName)'    
