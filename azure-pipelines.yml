@@ -10,7 +10,7 @@ trigger:
 
 
 steps:
-- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master1') }}:
   - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
