@@ -7,7 +7,8 @@ variables:
 - name: debug
   value: true 
 pool:
-  name: Default
+#  name: Default
+   vmImage: 'ubuntu-20.04'
   
 steps:
 - task: checkmarx.cxsast.cx-scan-task.Application security testing@2022
