@@ -10,7 +10,7 @@ pool:
   name: Default
   
 steps:
-- task: checkmarx-prerelease.cxsast.cx-scan-task.Application security testing@2022
+- task: checkmarx.cxsast.cx-scan-task.Application security testing@2022
   displayName: 'Application security testing'
   inputs:
       projectName: meinaral-app-pipeline
