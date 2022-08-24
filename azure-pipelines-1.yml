@@ -11,6 +11,12 @@ pool:
    vmImage: 'ubuntu-20.04'
   
 steps:
+- script: |
+    curl -L "https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz" -o "ScaResolver.tar.gz" && tar -vxzf ScaResolver.tar.gz && sudo mv ScaResolver /usr/local/bin && rm Configuration.ini ScaResolver.tar.gz
+        displayName: Download & extract SCAResolver
+
+- script: |
+    ls -lart /usr/local/bin
 - task: checkmarx.cxsast.cx-scan-task.Application security testing@2022
   displayName: 'Application security testing'
   inputs:
