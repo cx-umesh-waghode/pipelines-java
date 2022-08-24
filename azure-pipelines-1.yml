@@ -10,14 +10,25 @@ pool:
   name: Default
   
 steps:
-- task: checkmarx.cxsast.cx-scan-task.Application security testing@2021
+- task: checkmarx.cxsast.cx-scan-task.Application security testing@2022
   displayName: 'Application security testing'
   inputs:
-    projectName: test
-    CheckmarxService: ${{ parameters.cxService }}
-    incScan: false    
-    fullTeamName: "/CxServer"
-    comment: '$(Build.SourceBranchName)'    
-    enableProxy: false
-    enableSastScan: true    
-    enableDependencyScan: false
+      projectName: meinaral-app-pipeline
+      syncMode: true
+      enableProxy: false
+      enableSastScan: false
+      enableDependencyScan: true
+      dependencyServerURL: SCA-Recall
+      dependencyAccessControlURL: 'https://platform.checkmarx.net'
+      dependencyWebAppURL: 'https://sca.checkmarx.net'
+      includeSource: false
+      dependencyFolderExclusion: 'cvs,.svn,.hg,.git,.bzr,bin,obj,backup,.idea,node_modules'
+      dependencyTenant: BP
+      scaVulnerabilityThreshold: false
+      pathToScaResolver: '/usr/local/bin'
+      isEnableScaResolver: true
+      scaResolverAddParameters: '-s /root/SourceCode/JavaVulnerableLabE -n meinaral-app-pipeline -r /home/administrator/umesh/results'
+      scaHigh: ' '
+      scaMedium: ' '
+      scaLow: ' '
+      scaTeam: 'CxServer/'
