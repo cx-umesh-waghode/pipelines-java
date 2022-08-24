@@ -16,8 +16,8 @@ steps:
 
 - script: |
     ls -lart /usr/local/bin
-- script:|
-    echo '-s $(Build.SourcesDirectory) -n meinaral-app-pipeline -r $(Agent.BuildDirectory)'    
+    
+- bash: echo '-s $(Build.SourcesDirectory) -n meinaral-app-pipeline -r $(Agent.BuildDirectory)'    
 - task: checkmarx.cxsast.cx-scan-task.Application security testing@2022
   displayName: 'Application security testing'
   inputs:
