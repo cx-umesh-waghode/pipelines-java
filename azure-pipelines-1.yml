@@ -16,6 +16,8 @@ steps:
 
 - script: |
     ls -lart /usr/local/bin
+- script:|
+    echo '-s $(Build.SourcesDirectory) -n meinaral-app-pipeline -r $(Agent.BuildDirectory)'    
 - task: checkmarx.cxsast.cx-scan-task.Application security testing@2022
   displayName: 'Application security testing'
   inputs:
@@ -33,7 +35,7 @@ steps:
       scaVulnerabilityThreshold: false
       pathToScaResolver: '/usr/local/bin'
       isEnableScaResolver: true
-      scaResolverAddParameters: '-s /home/vsts/work/1/s -n meinaral-app-pipeline -r /home/vsts/work'
+      scaResolverAddParameters: '-s $(Build.SourcesDirectory) -n meinaral-app-pipeline -r $(Agent.BuildDirectory)'
       scaHigh: ' '
       scaMedium: ' '
       scaLow: ' '
