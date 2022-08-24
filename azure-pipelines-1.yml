@@ -33,7 +33,7 @@ steps:
       scaVulnerabilityThreshold: false
       pathToScaResolver: '/usr/local/bin'
       isEnableScaResolver: true
-      scaResolverAddParameters: '-s /root/SourceCode/JavaVulnerableLabE -n meinaral-app-pipeline -r /home/administrator/umesh/results'
+      scaResolverAddParameters: '-s /home/vsts/work/1/s -n meinaral-app-pipeline -r /home/vsts/work'
       scaHigh: ' '
       scaMedium: ' '
       scaLow: ' '
