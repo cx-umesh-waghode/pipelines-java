@@ -13,7 +13,6 @@ pool:
 steps:
 - script: |
     curl -L "https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz" -o "ScaResolver.tar.gz" && tar -vxzf ScaResolver.tar.gz && sudo mv ScaResolver /usr/local/bin && rm Configuration.ini ScaResolver.tar.gz
-    displayName: "Download & extract SCAResolver"
 
 - script: |
     ls -lart /usr/local/bin
