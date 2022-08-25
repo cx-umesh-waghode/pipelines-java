@@ -21,7 +21,7 @@ steps:
 - task: checkmarx.cxsast.cx-scan-task.Application security testing@2022
   displayName: 'Application security testing'
   inputs:
-      projectName: meinaral-app-pipeline
+      projectName: meinaral-app-pipeline$(Agent.Name)
       syncMode: true
       enableProxy: false
       enableSastScan: false
