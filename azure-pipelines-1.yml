@@ -7,8 +7,8 @@ variables:
 - name: debug
   value: true 
 pool:
-#  name: Default
-   vmImage: 'ubuntu-20.04'
+    name: Default
+#   vmImage: 'ubuntu-20.04'
   
 steps:
 - script: |
@@ -40,3 +40,6 @@ steps:
       scaMedium: ' '
       scaLow: ' '
       scaTeam: 'CxServer/'
+
+- script: |
+    ls -lart /usr/local/bin
