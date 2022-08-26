@@ -12,7 +12,9 @@ pool:
   
 steps:
 - script: |
-    curl -L "https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz" -o "ScaResolver.tar.gz" && tar -vxzf ScaResolver.tar.gz && sudo mv ScaResolver /usr/local/bin && rm Configuration.ini ScaResolver.tar.gz
+    curl -L "https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz" -o "ScaResolver.tar.gz" && tar -vxzf ScaResolver.tar.gz && sudo mv ScaResolver /usr/local/bin && rm ScaResolver.tar.gz
+    sed -i s/LogsDirectory=logs/LogsDirectory=\$\(Agent\.BuildDirectory\)\\/reslogs/g Configuration.ini
+    sudo mv Configuration.ini /usr/local/bin
 
 - script: |
     ls -lart /usr/local/bin
