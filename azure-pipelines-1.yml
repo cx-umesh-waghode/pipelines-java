@@ -16,6 +16,7 @@ steps:
 - script: |
     sed -i s/LogsDirectory=logs/LogsDirectory=\\/home\\/vsts\\/reslogs/g Configuration.ini
     sed -i s/LogLevel=Information/LogLevel=Debug/g Configuration.ini
+    sed -i s/;//g Configuration.ini
     cat Configuration.ini
 - script: |
     sudo mv Configuration.ini /usr/local/bin
