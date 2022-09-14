@@ -2,13 +2,13 @@ parameters:
 - name: cxService
   type: string
   default: SAST-Bug
-- name: logParameter
-  type: string
-  default: ''
 
 variables:
 - name: debug
   value: true
+- name: logParameter
+  value: ''
+
 pool:
 #    name: Default
      vmImage: 'ubuntu-20.04'
