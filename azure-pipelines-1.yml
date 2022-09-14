@@ -32,7 +32,7 @@ steps:
       enableProxy: false
       enableSastScan: false
       enableDependencyScan: true
-      dependencyServerURL: b813dbc3-93df-48ab-84a7-6c861b202650
+      dependencyServerURL: SCA-umesh
       dependencyAccessControlURL: 'https://platform.checkmarx.net'
       dependencyWebAppURL: 'https://sca.checkmarx.net'
       includeSource: false
