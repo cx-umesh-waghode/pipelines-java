@@ -2,6 +2,9 @@ parameters:
 - name: cxService
   type: string
   default: SAST-Bug
+- name: logParameter
+  type: string
+  default: 
 
 variables:
 - name: debug
@@ -41,7 +44,7 @@ steps:
       scaVulnerabilityThreshold: false
       pathToScaResolver: '/usr/local/bin'
       isEnableScaResolver: true
-      scaResolverAddParameters: '-s $(Build.SourcesDirectory) -n meinaral-app-pipeline -r $(Agent.BuildDirectory) '
+      scaResolverAddParameters: '-s $(Build.SourcesDirectory) -n meinaral-app-pipeline -r $(Agent.BuildDirectory) $(logParameter) '
       scaHigh: ' '
       scaMedium: ' '
       scaLow: ' '
