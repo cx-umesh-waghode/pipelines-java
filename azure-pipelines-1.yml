@@ -6,8 +6,6 @@ parameters:
 variables:
 - name: debug
   value: true
-- name: logParameter
-  value: ''
 
 pool:
 #    name: Default
