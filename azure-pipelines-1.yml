@@ -41,7 +41,7 @@ steps:
       scaVulnerabilityThreshold: false
       pathToScaResolver: '/usr/local/bin'
       isEnableScaResolver: true
-      scaResolverAddParameters: '-s $(Build.SourcesDirectory) -n meinaral-app-pipeline -r $(Agent.BuildDirectory) --log-level Debug'
+      scaResolverAddParameters: '-s $(Build.SourcesDirectory) -n meinaral-app-pipeline -r $(Agent.BuildDirectory) '
       scaHigh: ' '
       scaMedium: ' '
       scaLow: ' '
