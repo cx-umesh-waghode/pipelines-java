@@ -5,7 +5,7 @@ parameters:
 
 variables:
 - name: debug
-  value: true 
+  value: true
 pool:
 #    name: Default
      vmImage: 'ubuntu-20.04'
