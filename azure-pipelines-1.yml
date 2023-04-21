@@ -24,7 +24,8 @@ steps:
     ls -lart /usr/local/bin
     
 - bash: echo '-s $(Build.SourcesDirectory) -n meinaral-app-pipeline -r $(Agent.BuildDirectory)'    
-- task: checkmarx.cxsast.cx-scan-task.Application security testing@2022
+- task: Checkmarx-umesh.cxsast.cx-scan-task.Application security testing@2022
+#checkmarx.cxsast.cx-scan-task.Application security testing@2022
   displayName: 'Application security testing'
   inputs:
       projectName: meinaral-app-pipeline
