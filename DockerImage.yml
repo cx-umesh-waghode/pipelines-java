@@ -1,0 +1,23 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  imageName: 'localhost/my-sample-image'
+  imageTag: 'latest'
+  dockerfilePath: 'Dockerfile.localimage'   # 👈 Your custom Dockerfile name
+
+steps:
+- task: Checkout@1
+
+- script: |
+    echo "Building Docker image using $(dockerfilePath)..."
+    docker build -f $(dockerfilePath) -t $(imageName):$(imageTag) .
+  displayName: 'Build Docker Image with Custom Dockerfile'
+
+- script: |
+    echo "List Docker image..."
+    docker image ls
+  displayName: 'Run Docker Image'
