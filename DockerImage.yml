@@ -7,17 +7,24 @@ pool:
 variables:
   imageName: 'localhost/my-sample-image'
   imageTag: 'latest'
-  dockerfilePath: 'Dockerfile.localimage'   # 👈 Your custom Dockerfile name
+  dockerfilePath: 'Dockerfile.custom'
 
 steps:
 - task: Checkout@1
 
 - script: |
-    echo "Building Docker image using $(dockerfilePath)..."
-    docker build -f $(dockerfilePath) -t $(imageName):$(imageTag) .
+    echo "Building Docker image using $DOCKERFILEPATH..."
+    docker build -f "$DOCKERFILEPATH" -t "$IMAGENAME:$IMAGETAG" .
   displayName: 'Build Docker Image with Custom Dockerfile'
+  env:
+    DOCKERFILEPATH: $(dockerfilePath)
+    IMAGENAME: $(imageName)
+    IMAGETAG: $(imageTag)
 
 - script: |
-    echo "List Docker image..."
-    docker image ls
+    echo "Running Docker image..."
+    docker run --rm "$IMAGENAME:$IMAGETAG"
   displayName: 'Run Docker Image'
+  env:
+    IMAGENAME: $(imageName)
+    IMAGETAG: $(imageTag)
