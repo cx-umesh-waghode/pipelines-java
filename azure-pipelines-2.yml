@@ -4,8 +4,9 @@ trigger:
     - main
     - master
 
-pool:
-  vmImage: ubuntu-22.04
+pool: 
+  name: Default  # Uses the self-hosted 'Default' pool
+
 
 # Checkmarx SCA
 steps:
