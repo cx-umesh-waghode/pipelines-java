@@ -16,5 +16,5 @@ steps:
     enableProxy: false
     enableSastScan: false
     enableDependencyScan: true
-    dependencyServerURL: 'Checkmarx SCA'
+    dependencyServerURL: 'SCA'
     scaTeam: '/CxServer'
