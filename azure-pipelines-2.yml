@@ -7,15 +7,14 @@ trigger:
 pool:
   vmImage: ubuntu-22.04
 
-variables:
-
 # Checkmarx SCA
-- task: Application security scanning
-  displayName: Checkmarx Scan for ENext FilerManagement Service
+steps:
+- task: checkmarx.cxsast.cx-scan-task.Application security testing@2025
+  displayName: Umesh
   inputs:
     projectName: 'SharedServices-ENext-Filer-Management'
     enableProxy: false
     enableSastScan: false
     enableDependencyScan: true
     dependencyServerURL: 'Checkmarx SCA'
-    scaTeam: 'CxServer\SharedServices\ENext-Filer-Management'
+    scaTeam: '/CxServer'
