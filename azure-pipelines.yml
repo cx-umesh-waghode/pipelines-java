@@ -30,10 +30,10 @@ steps:
     forceScan: false
     folderExclusion: 'cvs, .svn, .hg , .git, .bzr, bin , obj,  backup, .idea, node_modules'
     fileExtension: 'cvs, .svn, .hg , .git, .bzr, bin , obj,  backup, .idea, node_modules'
-    manifestPattern: **/folder1/**, !**test.yaml
-    fingerprintPattern: **/folder1/**, !**test.yaml
-    projectCustomTags: 'ENV: DEV', 'Team: '
-    scanCustomTags: ‘ENV: DEV', 'Team: '
+    manifestPattern: '**/folder1/**, !**test.yaml'
+    fingerprintPattern: '**/folder1/**, !**test.yaml'
+    projectCustomTags: 'ENV: DEV'
+    scanCustomTags: 'ENV: DEV'
     scaScanTimeout:
     scanTimeout: 15        
     denyProject: false
