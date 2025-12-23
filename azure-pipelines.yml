@@ -1,23 +1,61 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+parameters:
+- name: cxService
+  type: string
+  default: SAST-Bug
 
-trigger:
-- master
-
-#pool: Default
+variables:
+- name: debug
+  value: true 
+pool:
+#    name: Default
+     vmImage: 'ubuntu-22.04'
 
 
 steps:
-- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master1') }}:
-  - task: Maven@3
-    inputs:
-      mavenPomFile: 'pom.xml'
-      mavenOptions: '-Xmx3072m'
-      javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.8'
-      jdkArchitectureOption: 'x64'
-      publishJUnitResults: true
-      testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      goals: 'package'
+- task: Checkmarx-Prerelease.cxsast.cx-scan-task.Application security testing@2025
+  displayName: 'Application security testing'
+  inputs:
+    projectName: 'FullPipeline'
+    syncMode: true
+    enableProxy: false
+    enableSastScan: true
+    CheckmarxService: SAST-Bug    
+    preset: Android
+    customPreset: 'All'     
+    fullTeamName: /CxServer    
+    overrideProjectSettings: false
+    incScan: true
+    fullScansScheduled: true
+    fullScanCycle: 5
+    forceScan: false
+    folderExclusion: 'cvs, .svn, .hg , .git, .bzr, bin , obj,  backup, .idea, node_modules'
+    fileExtension: 'cvs, .svn, .hg , .git, .bzr, bin , obj,  backup, .idea, node_modules'
+    manifestPattern: **/folder1/**, !**test.yaml
+    fingerprintPattern: **/folder1/**, !**test.yaml
+    projectCustomTags: 'ENV: DEV', 'Team: '
+    scanCustomTags: ‘ENV: DEV', 'Team: '
+    scaScanTimeout:
+    scanTimeout: 15        
+    denyProject: false
+    comment: 'Sample YAML File'    
+    generatePDFReport: true
+    vulnerabilityThreshold: true
+    failBuildForNewVulnerabilitiesEnabled: true
+    failBuildForNewVulnerabilitiesSeverity: MEDIUM
+    high: 10
+    medium: 10
+    low: 10
+    enablePolicyViolations: false
+    avoidDuplicateScans: false
+    enableDependencyScan: true
+    dependencyServerURL: 'SCA'    
+    dependencyFileExtension: ''
+    dependencyFolderExclusion: ''
+    scaTeam: /CxServer
+    includeSource: false      
+    CheckmarxServiceForSca: SAST-Bug        
+    scaEnablePolicyViolations: false
+    scaVulnerabilityThreshold: true
+    scaHigh: 10
+    scaMedium: 10
+    scaLow: 10
