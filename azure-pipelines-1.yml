@@ -46,7 +46,7 @@ steps:
       scaHigh: ' '
       scaMedium: ' '
       scaLow: ' '
-      scaTeam: 'CxServer/'
+      scaTeam: '/CxServer'
 
 - script: |
     cat /home/vsts/reslogs/*
