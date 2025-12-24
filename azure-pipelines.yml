@@ -29,7 +29,7 @@ steps:
     fullScanCycle: 5
     forceScan: false
     folderExclusion: cvs, .svn, .hg , .git, .bzr, bin , obj,  backup, .idea, node_modules
-    fileExtension: **/*.java, **/*.html
+    fileExtension: "**/*.java, **/*.html"
     manifestPattern: "**/folder1/**, !**test.yaml"
     fingerprintPattern: "**/folder1/**, !**test.yaml"
     projectCustomTags: 'ENV: DEV'
