@@ -12,7 +12,7 @@ pool:
 
 
 steps:
-- task: Checkmarx-Prerelease.cxsast.cx-scan-task.Application security testing@2025
+- task: Checkmarx.cxsast.cx-scan-task.Application security testing@2025
   displayName: 'Application security testing'
   inputs:
     projectName: 'FullPipeline'
