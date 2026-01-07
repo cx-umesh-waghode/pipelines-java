@@ -31,7 +31,7 @@ steps:
     folderExclusion: cvs, .svn, .hg , .git, .bzr, bin , obj,  backup, .idea, node_modules
     fileExtension: "**/*.java, **/*.html"
     manifestPattern: "**/folder1/**, !**test.yaml"
-    fingerprintPattern: "**/folder1/**, !**test.yaml"
+    fingerprintPattern: "**/folder1/**, !**test.yaml",**/pom.xml
     projectCustomTags: 'ENV: DEV'
     scanCustomTags: 'ENV: DEV'
     scaScanTimeout:
