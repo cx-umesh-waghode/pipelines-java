@@ -52,7 +52,7 @@ steps:
     dependencyFileExtension: ''
     dependencyFolderExclusion: ''
     scaTeam: /CxServer
-    includeSource: false      
+    includeSource: true      
     CheckmarxServiceForSca: SAST-Bug        
     scaEnablePolicyViolations: false
     scaVulnerabilityThreshold: true
