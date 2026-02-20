@@ -5,7 +5,7 @@ trigger:
     - master
 
 pool: 
-  name: Default  # Uses the self-hosted 'Default' pool
+  name: Umesh  # Uses the self-hosted 'Default' pool
 
 
 # Checkmarx SCA
